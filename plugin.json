@@ -4,8 +4,8 @@
 	"description": "Inform your users that you are using cookies",
 	"demo": "http://kokensupport.varoystrand.se/demo/",
 	"author": {
-		"name": "Bjarne",
-		"link": "http://kokensupport.varoystrand.se/"
+		"name": "Bjarne Varoystrand",
+		"link": "http://varoystrand.se/"
 	},
 	
 	"data": {
@@ -41,7 +41,7 @@
 		},
 		"cookie_consent_link": {
 			"label": "Cookie policy link",
-			"info": "The url of your cookie policy. If its set to null, the link is hidden.",
+			"info": "The url of your cookie policy. If its empty, the link is hidden.",
 			"type": "string",
 			"value": "/pages/privacypolicy/"
 		},
@@ -50,16 +50,15 @@
 			"info": "The theme you wish to use.",
 			"type": "select",
 			"options": [
-				{ "label": "Light top", "value": "light-top" },
-				{ "label": "Light floating", "value": "light-floating" },
-				{ "label": "Light bottom", "value": "light-bottom" },
-				{ "label": "Dark top", "value": "dark-top" },
-				{ "label": "Dark floating", "value": "dark-floating" },
-				{ "label": "Dark floating tada", "value": "dark-floating-tada" },
-				{ "label": "Dark bottom", "value": "dark-bottom" },
-				{ "label": "Dark inline", "value": "dark-inline" }
-			],
-			"value": "dark-top"
+				{ "value": "light-top", "label": "Light top" },
+				{ "value": "light-floating", "label": "Light floating" },
+				{ "value": "light-bottom", "label": "Light bottom" },
+				{ "value": "dark-top", "label": "Dark top" },
+				{ "value": "dark-floating", "label": "Dark floating" },
+				{ "value": "dark-floating-tada", "label": "Dark floating tada" },
+				{ "value": "dark-bottom", "label": "Dark bottom" },
+				{ "value": "dark-inline", "label": "Dark inline" }
+			]
 		}
 	}
 }
