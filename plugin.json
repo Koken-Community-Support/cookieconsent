@@ -1,0 +1,65 @@
+{
+	"name": "Cookie Consent",
+	"version": "1.0",
+	"description": "Inform your users that you are using cookies",
+	"demo": "http://kokensupport.varoystrand.se/demo/",
+	"author": {
+		"name": "Bjarne",
+		"link": "http://kokensupport.varoystrand.se/"
+	},
+	
+	"data": {
+		"cookie_consent_message": {
+			"label": "The message shown",
+			"info": "The message shown by the plugin.",
+			"type": "string",
+			"value": "This website uses cookies to ensure you get the best experience on our website",
+			"validation": {
+				"type": "not_empty",
+				"error_message": "You need to provide a message to your visitors. I.e This website uses cookies to ensure you get the best experience on our website"
+			}
+		},
+		"cookie_consent_dismiss": {
+			"label": "Dismiss button",
+			"info": "The text used on the dismiss button.",
+			"type": "string",
+			"value": "Got it",
+			"validation": {
+				"type": "not_empty",
+				"error_message": "You need to provide a button text. I.e Got it"
+			}
+		},
+		"cookie_consent_learnmore": {
+			"label": "Learn more link",
+			"info": "The text shown on the link to the cookie policy.",
+			"type": "string",
+			"value": "More info",
+			"validation": {
+				"type": "not_empty",
+				"error_message": "You need to provide a text on the cookie policy link. I.e More info"
+			}
+		},
+		"cookie_consent_link": {
+			"label": "Cookie policy link",
+			"info": "The url of your cookie policy. If its set to null, the link is hidden.",
+			"type": "string",
+			"value": "/pages/privacypolicy/"
+		},
+		"cookie_consent_theme": {
+			"label": "Theme",
+			"info": "The theme you wish to use.",
+			"type": "select",
+			"options": [
+				{ "label": "Light top", "value": "light-top" },
+				{ "label": "Light floating", "value": "light-floating" },
+				{ "label": "Light bottom", "value": "light-bottom" },
+				{ "label": "Dark top", "value": "dark-top" },
+				{ "label": "Dark floating", "value": "dark-floating" },
+				{ "label": "Dark floating tada", "value": "dark-floating-tada" },
+				{ "label": "Dark bottom", "value": "dark-bottom" },
+				{ "label": "Dark inline", "value": "dark-inline" }
+			],
+			"value": "dark-top"
+		}
+	}
+}
