@@ -43,7 +43,7 @@
 			"label": "Cookie policy link",
 			"info": "The url of your cookie policy. If its empty, the link is hidden.",
 			"type": "string",
-			"value": "/pages/privacypolicy/"
+			"placeholder": "/pages/privacy-policy/"
 		},
 		"cookie_consent_theme": {
 			"label": "Theme",
@@ -54,10 +54,10 @@
 				{ "value": "light-floating", "label": "Light floating" },
 				{ "value": "light-bottom", "label": "Light bottom" },
 				{ "value": "dark-top", "label": "Dark top" },
+				{ "value": "dark-inline", "label": "Dark inline" },
 				{ "value": "dark-floating", "label": "Dark floating" },
 				{ "value": "dark-floating-tada", "label": "Dark floating tada" },
-				{ "value": "dark-bottom", "label": "Dark bottom" },
-				{ "value": "dark-inline", "label": "Dark inline" }
+				{ "value": "dark-bottom", "label": "Dark bottom" }
 			]
 		}
 	}
