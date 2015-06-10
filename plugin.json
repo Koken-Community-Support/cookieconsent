@@ -59,7 +59,8 @@
 				{ "value": "dark-inline", "label": "Dark inline" },
 				{ "value": "dark-floating", "label": "Dark floating" },
 				{ "value": "dark-floating-tada", "label": "Dark floating tada" },
-				{ "value": "dark-bottom", "label": "Dark bottom" }
+				{ "value": "dark-bottom", "label": "Dark bottom" },
+				{ "value": "false", "label": "Use your own theme" }
 			]
 		}
 	}
