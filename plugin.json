@@ -1,6 +1,6 @@
 {
 	"name": "Cookie Consent",
-	"version": "1.0.4",
+	"version": "1.0.5",
 	"description": "Inform your users that you are using cookies",
 	"demo": "http://varoystrand.se/sidor/cookie-consent-for-koken/",
 	"author": {
@@ -51,7 +51,9 @@
 			"type": "select",
 			"options": [
 				{ "value": "light-top", "label": "Light top" },
+				{ "value": "light-inline", "label": "Light inline" },
 				{ "value": "light-floating", "label": "Light floating" },
+				{ "value": "light-floating-tada", "label": "Light floating tada" },
 				{ "value": "light-bottom", "label": "Light bottom" },
 				{ "value": "dark-top", "label": "Dark top" },
 				{ "value": "dark-inline", "label": "Dark inline" },
