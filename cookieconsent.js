@@ -226,7 +226,7 @@
 
         '<p class="cc_message">{{options.message}} <a data-cc-if="options.link" class="cc_more_info" href="{{options.link || "#null"}}">{{options.learnMore}}</a></p>',
 
-        '<a class="cc_logo" onclick="return !window.open(this.href);" href="http://kokensupport.varoystrand.se/viewtopic.php?f=17&t=38" title="Cookie Consent plugin for Koken CMS">Cookie Consent plugin for the EU cookie law</a>',
+        '<a class="cc_logo" onclick="return !window.open(this.href);" href="http://varoystrand.se/sidor/cookie-consent-for-koken/" title="Cookie Consent plugin for Koken CMS">Cookie Consent plugin for Koken</a>',
         '</div>',
         '</div>'
       ]

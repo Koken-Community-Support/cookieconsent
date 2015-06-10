@@ -1,8 +1,8 @@
 {
 	"name": "Cookie Consent",
-	"version": "1.0.2",
+	"version": "1.0.4",
 	"description": "Inform your users that you are using cookies",
-	"demo": "http://kokensupport.varoystrand.se/demo/",
+	"demo": "http://varoystrand.se/sidor/cookie-consent-for-koken/",
 	"author": {
 		"name": "Bjarne Varoystrand",
 		"link": "http://varoystrand.se/"
