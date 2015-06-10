@@ -11,6 +11,10 @@ It is designed to help you comply with the hideous EU Cookie Law and not make yo
 ## Installation
 
 ## Documentation
+http://varoystrand.se/sidor/cookie-consent-for-koken/
+
+## Support
+http://kokensupport.varoystrand.se/viewtopic.php?f=17&t=38
 
 ## Contributing
 
