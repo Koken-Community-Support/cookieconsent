@@ -11,12 +11,16 @@ class BaldursPhotographyCookieConsent extends KokenPlugin {
 	function render()
 	{
 
-		$message	= $this->data->cookie_consent_message;
-		$dismiss	= $this->data->cookie_consent_dismiss;
-		$learnMore	= $this->data->cookie_consent_learnmore;
-		$link		= $this->data->cookie_consent_link;
-		$theme		= $this->data->cookie_consent_theme;
-		$path		= $this->get_path();
+		$message		= $this->data->cookie_consent_message;
+		$dismiss		= $this->data->cookie_consent_dismiss;
+		$learnMore		= $this->data->cookie_consent_learnmore;
+		$link			= $this->data->cookie_consent_link;
+		$theme			= $this->data->cookie_consent_theme;
+		$target			= $this->data->cookie_consent_target;
+		$cookiedomain	= $this->data->cookie_consent_domain;
+		$cookiepath		= $this->data->cookie_consent_path;
+		$cookieexp		= $this->data->cookie_consent_expirydays;
+		$path			= $this->get_path();
 
 		echo <<<OUT
 <script type="text/javascript">
@@ -25,7 +29,11 @@ class BaldursPhotographyCookieConsent extends KokenPlugin {
 		dismiss: '{$dismiss}',
 		learnMore: '{$learnMore}',
 		link: '{$link}',
-		theme: '{$path}/styles/{$theme}.css'
+		target: '_{$target}',
+		theme: '{$path}/styles/{$theme}.css',
+		domain: '{$cookiedomain}',
+		path: '{$cookiepath}',
+		expiryDays: '{$cookieexp}'
 	}
 </script>
 <script type="text/javascript" src="{$path}/cookieconsent.js"></script>

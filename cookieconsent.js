@@ -20,8 +20,8 @@
   var THEME_BUCKET_PATH = '//s3.amazonaws.com/cc.silktide.com/';
 
   // No point going further if they've already dismissed.
-  if (document.cookie.indexOf(DISMISSED_COOKIE) > -1) {
-    return;
+ if (document.cookie.indexOf(DISMISSED_COOKIE) > -1 || (window.navigator && window.navigator.CookiesOK)) {
+     return;
   }
 
   // IE8...
@@ -91,11 +91,25 @@
       return null;
     },
 
-    setCookie: function (name, value, expirydays) {
+    setCookie: function (name, value, expiryDays, domain, path) {
+      expiryDays = expiryDays || 365;
+
       var exdate = new Date();
-      expirydays = expirydays || 365;
-      exdate.setDate(exdate.getDate() + expirydays);
-      document.cookie = name + '=' + value + '; expires=' + exdate.toUTCString() + '; path=/'
+      exdate.setDate(exdate.getDate() + expiryDays);
+
+      var cookie = [
+        name + '=' + value,
+        'expires=' + exdate.toUTCString(),
+        'path=' + path || '/'
+      ];
+
+      if (domain) {
+        cookie.push(
+          'domain=' + domain
+        );
+      }
+
+      document.cookie = cookie.join(';');
     },
 
     addEventListener: function (el, event, eventListener) {
@@ -139,7 +153,7 @@
     var insertReplacements = function (htmlStr, scope) {
       return htmlStr.replace(/\{\{(.*?)\}\}/g, function (_match, sub) {
         var tokens = sub.split('||');
-        var value;
+        var value, token;
         while (token = tokens.shift()) {
           token = token.trim();
 
@@ -217,14 +231,18 @@
       dismiss: 'Got it!',
       learnMore: 'More info',
       link: null,
+      target: '_self',
       container: null, // selector
       theme: 'light-floating',
+      domain: null, // default to current domain.
+      path: '/', 
+      expiryDays: 365,
       markup: [
         '<div class="cc_banner-wrapper {{containerClasses}}">',
         '<div class="cc_banner cc_container cc_container--open">',
-        '<a href="#null" data-cc-event="click:dismiss" class="cc_btn cc_btn_accept_all">{{options.dismiss}}</a>',
+        '<a href="#null" data-cc-event="click:dismiss" target="_blank" class="cc_btn cc_btn_accept_all">{{options.dismiss}}</a>',
 
-        '<p class="cc_message">{{options.message}} <a data-cc-if="options.link" class="cc_more_info" href="{{options.link || "#null"}}">{{options.learnMore}}</a></p>',
+        '<p class="cc_message">{{options.message}} <a data-cc-if="options.link" target="{{ options.target }}" class="cc_more_info" href="{{options.link || "#null"}}">{{options.learnMore}}</a></p>',
 
         '<a class="cc_logo" onclick="return !window.open(this.href);" href="http://varoystrand.se/sidor/cookie-consent-for-koken/" title="Cookie Consent plugin for Koken CMS">Cookie Consent plugin for Koken</a>',
         '</div>',
@@ -309,14 +327,14 @@
     },
 
     dismiss: function (evt) {
-      evt.preventDefault() && evt.preventDefault();
+      evt.preventDefault && evt.preventDefault();
 	  evt.returnValue = false;
       this.setDismissedCookie();
       this.container.removeChild(this.element);
     },
 
     setDismissedCookie: function () {
-      Util.setCookie(DISMISSED_COOKIE, 'yes');
+      Util.setCookie(DISMISSED_COOKIE, 'yes', this.options.expiryDays, this.options.domain, this.options.path);
     }
   };
 

@@ -1,13 +1,12 @@
 {
 	"name": "Cookie Consent",
-	"version": "1.0.7",
+	"version": "1.0.8",
 	"description": "Inform your users that you are using cookies",
 	"demo": "http://varoystrand.se/sidor/cookie-consent-for-koken/",
 	"author": {
 		"name": "Bjarne Varoystrand",
 		"link": "http://varoystrand.se/"
 	},
-	
 	"data": {
 		"cookie_consent_message": {
 			"label": "The message shown",
@@ -61,6 +60,37 @@
 				{ "value": "dark-floating-tada", "label": "Dark floating tada" },
 				{ "value": "dark-bottom", "label": "Dark bottom" },
 				{ "value": "false", "label": "Use your own theme" }
+			]
+		},
+		"cookie_consent_path": {
+			"label": "Cookie Path",
+			"info": "The path for the consent cookie that Cookie Consent uses, to remember that users have consented to cookies. Use to limit consent to a specific path within your website.",
+			"type": "string",
+			"value": "/"
+			"validation": {
+				"type": "not_empty",
+				"error_message": "You need to set a valid path for the cookie."
+			}
+		},
+		"cookie_consent_domain": {
+			"label": "Cookie Domain",
+			"info": "The domain for the consent cookie that Cookie Consent uses, to remember that users have consented to cookies. Useful if your website uses multiple subdomains, e.g. if your script is hosted at www.example.com you might override this to example.com, thereby allowing the same consent cookie to be read by subdomains like foo.example.com.",
+			"type": "string",
+			"placeholder": "example.com"
+		},
+		"cookie_consent_expirydays": {
+			"label": "Expiry days",
+			"info": "The number of days Cookie Consent should store the users consent information for. Defaults to 365 days (1 year).",
+			"type": "number",
+			"value": "365"
+		},
+		"cookie_consent_target": {
+			"label": "Target",
+			"info": "The target of the link to your cookie policy. Use to open a link in a new window.",
+			"type": "select",
+			"options": [
+				{ "value": "self", "label": "Same window" },
+				{ "value": "blank", "label": "Opens in new window" }
 			]
 		}
 	}
