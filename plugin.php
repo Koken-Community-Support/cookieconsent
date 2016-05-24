@@ -30,13 +30,13 @@ class BaldursPhotographyCookieConsent extends KokenPlugin {
 		learnMore: '{$learnMore}',
 		link: '{$link}',
 		target: '_{$target}',
-		theme: '{$path}/styles/{$theme}.css',
+		theme: '{$path}/styles/{$theme}.min.css',
 		domain: '{$cookiedomain}',
 		path: '{$cookiepath}',
 		expiryDays: '{$cookieexp}'
 	}
 </script>
-<script type="text/javascript" src="{$path}/cookieconsent.js"></script>
+<script type="text/javascript" src="{$path}/cookieconsent.min.js"></script>
 OUT;
 	}
 }
